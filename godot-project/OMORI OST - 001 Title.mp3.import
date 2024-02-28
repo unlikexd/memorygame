@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eyxx48h8mit1"
+path="res://.godot/imported/OMORI OST - 001 Title.mp3-c7e442e794be3384a877d4cc4221deac.mp3str"
+
+[deps]
+
+source_file="res://OMORI OST - 001 Title.mp3"
+dest_files=["res://.godot/imported/OMORI OST - 001 Title.mp3-c7e442e794be3384a877d4cc4221deac.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
