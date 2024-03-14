@@ -1,0 +1,8 @@
+res://player.tscn
+res://player.gd
+res://memorygame.tscn
+res://menu.tscn
+res://scene_transition.tscn
+res://second_room.tscn
+res://Area2D.gd
+res://Area2D1.gd

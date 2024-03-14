@@ -75,9 +75,13 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Your First 2D Game With Godot 4: START (GDQuest)"
-run/main_scene="res://memorygame.tscn"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneTransition="*res://scene_transition.tscn"
 
 [display]
 
@@ -91,7 +95,7 @@ project/assembly_name="Getting started with Godot 4"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/sprite_cutter/plugin.cfg")
 
 [input]
 

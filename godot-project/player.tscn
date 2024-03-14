@@ -1,19 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://ubo6kcaxd5t7"]
+[gd_scene load_steps=10 format=3 uid="uid://ubo6kcaxd5t7"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_s3fn4"]
-[ext_resource type="Texture2D" uid="uid://dp2qgu5ycq4tb" path="res://player.png" id="2_5d3h0"]
+[ext_resource type="Texture2D" uid="uid://bft36dhac2nbu" path="res://New Piskel (1).png" id="2_5i1j2"]
+[ext_resource type="Script" path="res://idle.gd" id="3_bku5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s21be"]
-size = Vector2(50, 114)
+size = Vector2(115, 336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pejr0"]
+atlas = ExtResource("2_5i1j2")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63prr"]
+atlas = ExtResource("2_5i1j2")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uml3"]
+atlas = ExtResource("2_5i1j2")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12lgf"]
+atlas = ExtResource("2_5i1j2")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8eu63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pejr0")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63prr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uml3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12lgf")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_s3fn4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(-0.5, -9)
 shape = SubResource("RectangleShape2D_s21be")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(3.03906, 2.54688)
-texture = ExtResource("2_5d3h0")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8eu63")
+animation = &"idle_down"
+script = ExtResource("3_bku5r")
