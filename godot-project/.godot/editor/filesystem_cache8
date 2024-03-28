@@ -1,27 +1,38 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710395058
-LICENSE.md::TextFile::-1::1710360615::0::1::::<><>::
-main_menu_music.tscn::PackedScene::3120275491427849901::1709147555::0::1::::<><>::uid://eyxx48h8mit1::::res://OMORI OST - 001 Title.mp3
-memorygame.tscn::PackedScene::2354784023630884591::1710395002::0::1::::<><>::uid://ubo6kcaxd5t7::::res://player.tscn<>res://addons/sprite_cutter/AtlasScene.gd
-menu.gd::GDScript::-1::1710259326::0::1::::<>Control<>::
-menu.tscn::PackedScene::7826098496072831978::1710395002::0::1::::<><>::res://menu.gd<>uid://eyxx48h8mit1::::res://OMORI OST - 001 Title.mp3<>uid://b2oybmscnd415::::res://pxfuel.jpg<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf
-New Piskel (1).png::CompressedTexture2D::2778343683006341794::1710363212::1710363212::1::::<><>::
-OMORI OST - 001 Title.mp3::AudioStreamMP3::331739579261333968::1709147443::1709147480::1::::<><>::
-Pixel Times Bold.ttf::FontFile::2507951199698804691::1709148153::1709148153::1::::<><>::
-player.gd::GDScript::-1::1710394485::0::1::::<>CharacterBody2D<>::
-player.png::CompressedTexture2D::8268816189562016923::1709130444::1709130458::1::::<><>::
-player.tscn::PackedScene::1406747176378488998::1710395002::0::1::::<><>::res://player.gd<>uid://bft36dhac2nbu::::res://New Piskel (1).png<>res://idle.gd
-pxfuel.jpg::CompressedTexture2D::4311880402292189102::1709148813::1709148814::1::::<><>::
-README.md::TextFile::-1::1710360615::0::1::::<><>::
-Idle.gd::GDScript::-1::1710394084::0::1::::<>AnimatedSprite2D<>::
-Room1.png::CompressedTexture2D::8330506519899014391::1710364666::1710364667::1::::<><>::
-room2.png::CompressedTexture2D::1554379521604141840::1710395058::1710395059::1::::<><>::
-scene_transition.gd::GDScript::-1::1710258359::0::1::::<>CanvasLayer<>::
-scene_transition.tscn::PackedScene::6275225547433224039::1710395002::0::1::::<><>::res://scene_transition.gd
+::res://::1711596824
+Area2D1.gd::GDScript::-1::1711574109::0::1::::<>Area2D<>::
+Area2D.gd::GDScript::-1::1711575108::0::1::::<>Area2D<>::
+audio_player.gd::GDScript::-1::1711565096::0::1::::<>AudioStreamPlayer<>::
+back.png::CompressedTexture2D::5432295945181604279::1711560383::1711560383::1::::<><>::
+bg_audio.tscn::PackedScene::7688292775813851522::1711575109::0::1::::<><>::uid://dmo3t3ulwd2ud::::res://OMORI OST - 004 Spaces In-between.mp3<>res://audio_player.gd
+default_bus_layout.tres::AudioBusLayout::4326639756447593480::1711556317::0::1::::<><>::
+f.png::CompressedTexture2D::8042742279195775056::1711485559::1711485560::1::::<><>::
+global.gd::GDScript::-1::1711573134::0::1::::<>Node<>::
+LICENSE.md::TextFile::-1::1710396913::0::1::::<><>::
+main_menu_music.tscn::PackedScene::3120275491427849901::1710396913::0::1::::<><>::uid://eyxx48h8mit1::::res://OMORI OST - 001 Title.mp3
+memorygame.gd::GDScript::-1::1711574846::0::1::::<>Node2D<>::
+memorygame.tscn::PackedScene::2354784023630884591::1711575142::0::1::::<><>::uid://ubo6kcaxd5t7::::res://player.tscn<>res://memorygame.gd<>res://addons/sprite_cutter/AtlasScene.gd<>res://Area2D.gd<>uid://ch6hoyrp7osv3::::res://Room1 (2).png
+menu.gd::GDScript::-1::1711560996::0::1::::<>Control<>::
+menu.tscn::PackedScene::7826098496072831978::1711575109::0::1::::<><>::res://menu.gd<>uid://eyxx48h8mit1::::res://OMORI OST - 001 Title.mp3<>uid://b2oybmscnd415::::res://pxfuel.jpg<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf
+New Piskel (1).png::CompressedTexture2D::2778343683006341794::1710396913::1710396913::1::::<><>::
+OMORI OST - 001 Title.mp3::AudioStreamMP3::331739579261333968::1710396913::1710396913::1::::<><>::
+OMORI OST - 004 Spaces In-between.mp3::AudioStreamMP3::8032164971253413871::1710408756::1711560783::1::::<><>::
+Pixel Times Bold.ttf::FontFile::2507951199698804691::1710396913::1710396913::1::::<><>::
+player.gd::GDScript::-1::1711568624::0::1::::<>CharacterBody2D<>::
+player.png::CompressedTexture2D::8268816189562016923::1710396913::1710396913::1::::<><>::
+player.tscn::PackedScene::1406747176378488998::1711575109::0::1::::<><>::res://player.gd<>uid://bft36dhac2nbu::::res://New Piskel (1).png<>uid://dmt714tejrp65::::res://f.png<>uid://cjnpedmbwrjh4::::res://back.png
+pxfuel.jpg::CompressedTexture2D::4311880402292189102::1710396913::1710396913::1::::<><>::
+README.md::TextFile::-1::1710396913::0::1::::<><>::
+Room1 (2).png::CompressedTexture2D::5328610290839260094::1711568315::1711568316::1::::<><>::
+Room1.png::CompressedTexture2D::8330506519899014391::1710396913::1710396913::1::::<><>::
+room2.png::CompressedTexture2D::1554379521604141840::1710396913::1710396913::1::::<><>::
+scene_transition.gd::GDScript::-1::1711571968::0::1::::<>CanvasLayer<>::
+scene_transition.tscn::PackedScene::6275225547433224039::1711575109::0::1::::<><>::res://scene_transition.gd
+second_room.tscn::PackedScene::584983441118195279::1711575109::0::1::::<><>::res://addons/sprite_cutter/AtlasScene.gd<>uid://we7nyuaebuhk::::res://room2.png<>uid://ubo6kcaxd5t7::::res://player.tscn<>res://Area2D1.gd
 ::res://addons/::1710360615
-::res://addons/sprite_cutter/::1710360615
-asset_library_icon.png::CompressedTexture2D::1765266963200424859::1710360615::1710360615::1::::<><>::
-AtlasScene.gd::GDScript::-1::1710360615::0::1::::AtlasScene<>Node<>::
-icon.svg::CompressedTexture2D::3030683097792837955::1710360615::1710360615::1::::<><>::
-plugin.cfg::TextFile::-1::1710360615::0::1::::<><>::
-sprite_cutter.gd::GDScript::-1::1710360615::0::1::::<>EditorPlugin<>::
+::res://addons/sprite_cutter/::1711467933
+asset_library_icon.png::CompressedTexture2D::1765266963200424859::1710396913::1710396913::1::::<><>::
+AtlasScene.gd::GDScript::-1::1710396913::0::1::::AtlasScene<>Node<>::
+icon.svg::CompressedTexture2D::3030683097792837955::1710396913::1710396913::1::::<><>::
+plugin.cfg::TextFile::-1::1710396913::0::1::::<><>::
+sprite_cutter.gd::GDScript::-1::1710396913::0::1::::<>EditorPlugin<>::

@@ -42,16 +42,6 @@ position = Vector2(1810, 500)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_p71qh")
 
-[node name="CharacterBody2D" parent="AtlasScene" instance=ExtResource("3_xt5dd")]
-z_index = 1
-position = Vector2(278, 270)
-scale = Vector2(0.9, 0.9)
-
-[node name="Camera2D" type="Camera2D" parent="AtlasScene/CharacterBody2D"]
-position = Vector2(4.44446, -53.3333)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 disable_mode = 1
 
@@ -77,13 +67,22 @@ shape = SubResource("RectangleShape2D_cn43v")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("4_0hg5t")
 
 [node name="Door" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
 position = Vector2(282, 92)
 shape = SubResource("CircleShape2D_0lxdn")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_xt5dd")]
+z_index = 1
+position = Vector2(285, 291)
+scale = Vector2(0.8, 0.8)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(4.44446, -53.3333)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

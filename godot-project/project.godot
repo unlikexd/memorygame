@@ -74,7 +74,7 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Your First 2D Game With Godot 4: START (GDQuest)"
+config/name="Memory"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
@@ -82,6 +82,8 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneTransition="*res://scene_transition.tscn"
+BgAudio="*res://bg_audio.tscn"
+Global="*res://global.gd"
 
 [display]
 

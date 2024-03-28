@@ -1,17 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://8sw7i337qlb8"]
+[gd_scene load_steps=12 format=3 uid="uid://8sw7i337qlb8"]
 
 [ext_resource type="PackedScene" uid="uid://ubo6kcaxd5t7" path="res://player.tscn" id="1_5fhwt"]
+[ext_resource type="Script" path="res://memorygame.gd" id="1_g74x2"]
 [ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_m0gbe"]
 [ext_resource type="Script" path="res://Area2D.gd" id="3_ak1g0"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1neep"]
-load_path = "res://.godot/imported/Room1.png-04eff9ac6a04b731098762efab563f55.ctex"
+[ext_resource type="Texture2D" uid="uid://ch6hoyrp7osv3" path="res://Room1 (2).png" id="3_fdmcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4sos"]
 size = Vector2(818.143, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftth5"]
-size = Vector2(402, 60.5)
+size = Vector2(422, 60.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aevkl"]
 size = Vector2(80.375, 127.125)
@@ -25,8 +24,9 @@ size = Vector2(141.5, 286.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_h55g3"]
 radius = 68.8414
 
-[node name="Game" type="Node2D"]
+[node name="memorygame" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_g74x2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -19.0
@@ -39,16 +39,17 @@ color = Color(0.584314, 0.584314, 0.584314, 1)
 script = ExtResource("1_m0gbe")
 
 [node name="Room1" type="Sprite2D" parent="AtlasScene"]
-position = Vector2(960, 537.5)
-scale = Vector2(1.75649, 1.73144)
-texture = SubResource("CompressedTexture2D_1neep")
+position = Vector2(962.5, 544)
+scale = Vector2(0.432044, 0.442276)
+texture = ExtResource("3_fdmcm")
 region_enabled = true
-region_rect = Rect2(6.00003, 35.577, 501.443, 458.605)
+region_rect = Rect2(13.7919, 141.9, 2016.48, 1845.59)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_5fhwt")]
 z_index = 1
 position = Vector2(959, 495)
 scale = Vector2(0.9, 0.9)
+collision_layer = 5
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-2, 0)
@@ -81,7 +82,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(765, 190.75)
+position = Vector2(775, 190.75)
 shape = SubResource("RectangleShape2D_ftth5")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
@@ -100,12 +101,22 @@ position = Vector2(629, 749.25)
 shape = SubResource("RectangleShape2D_ummhh")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("3_ak1g0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Door" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
 position = Vector2(1063.63, 912)
 shape = SubResource("CircleShape2D_h55g3")
 
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+offset_left = 1005.0
+offset_top = 951.0
+offset_right = 1130.0
+offset_bottom = 982.0
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="text_submitted" from="LineEdit" to="Area2D" method="_on_line_edit_text_submitted"]
