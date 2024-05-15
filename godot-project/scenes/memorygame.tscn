@@ -1,0 +1,255 @@
+[gd_scene load_steps=25 format=3 uid="uid://gt5xbt7dai6p"]
+
+[ext_resource type="Script" path="res://scripts/memorygame.gd" id="1_lvh60"]
+[ext_resource type="Texture2D" uid="uid://dcovbekxei4d0" path="res://pictures/Background.png" id="2_7yqg7"]
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="3_darrc"]
+[ext_resource type="Texture2D" uid="uid://hq7m654jdh6i" path="res://pictures/Room1 (3).png" id="4_jrrtt"]
+[ext_resource type="PackedScene" uid="uid://8cajgwer2tik" path="res://scenes/inventory_item.tscn" id="5_7m8km"]
+[ext_resource type="Texture2D" uid="uid://rpfxtn4nik02" path="res://pictures/key.png" id="6_5pbgv"]
+[ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="7_xshbw"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="8_6iuii"]
+[ext_resource type="Script" path="res://scripts/Area2D.gd" id="9_sei8m"]
+[ext_resource type="Texture2D" uid="uid://dijxfeeojmri7" path="res://pictures/keyhole.png" id="10_n4uof"]
+[ext_resource type="Texture2D" uid="uid://blnnftf7bxxhe" path="res://pictures/digitlock.png" id="11_3krgk"]
+[ext_resource type="Texture2D" uid="uid://c8bbpousgp5la" path="res://pictures/chain.png" id="12_cjrcu"]
+[ext_resource type="Script" path="res://scripts/VaseArea.gd" id="13_4iw2u"]
+[ext_resource type="Texture2D" uid="uid://bsvitmjjv6uei" path="res://pictures/flower_in_vase.png" id="14_6irh8"]
+[ext_resource type="Script" path="res://scripts/BedArea.gd" id="15_f5qas"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4sos"]
+size = Vector2(818.143, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftth5"]
+size = Vector2(420, 221.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aevkl"]
+size = Vector2(80.375, 272.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8pv4"]
+size = Vector2(270, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ummhh"]
+size = Vector2(141.5, 286.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d4w4"]
+size = Vector2(106, 120)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h55g3"]
+radius = 68.8414
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io0ts"]
+radius = 71.007
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3o5b"]
+radius = 83.0
+
+[node name="memorygame" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_lvh60")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -19.0
+offset_top = -13.0
+offset_right = 1900.0
+offset_bottom = 1068.0
+color = Color(0.584314, 0.584314, 0.584314, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(942, 529)
+scale = Vector2(0.8, 0.904167)
+texture = ExtResource("2_7yqg7")
+
+[node name="AtlasScene" type="Node" parent="."]
+script = ExtResource("3_darrc")
+
+[node name="Room1" type="Sprite2D" parent="AtlasScene"]
+position = Vector2(962.5, 544)
+scale = Vector2(0.432044, 0.442276)
+texture = ExtResource("4_jrrtt")
+region_enabled = true
+region_rect = Rect2(2063.79, 2191.9, 2016.48, 1845.59)
+
+[node name="InventoryItem" parent="." instance=ExtResource("5_7m8km")]
+z_index = 1
+position = Vector2(670, 630)
+rotation = -0.698132
+scale = Vector2(0.5, 0.5)
+item_name = "Ключ"
+item_description = "Открывает замок"
+item_texture = ExtResource("6_5pbgv")
+
+[node name="InventoryItem2" parent="." instance=ExtResource("5_7m8km")]
+z_index = 1
+z_as_relative = false
+position = Vector2(1305, 514)
+scale = Vector2(0.5, 0.5)
+item_name = "Ключ2"
+item_description = "Открывает замок"
+item_texture = ExtResource("6_5pbgv")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_xshbw")]
+z_index = 1
+position = Vector2(641, 424)
+scale = Vector2(0.9, 0.9)
+collision_layer = 29
+
+[node name="TextBubble" type="Label" parent="CharacterBody2D"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 410.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("8_6iuii")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="BackBubble" type="ColorRect" parent="CharacterBody2D/TextBubble"]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_right = 324.0
+offset_bottom = 65.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(962, 153)
+shape = SubResource("RectangleShape2D_f4sos")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(967, 904)
+shape = SubResource("RectangleShape2D_f4sos")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(550, 539.857)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_f4sos")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1376, 542.375)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_f4sos")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(774, 271.25)
+shape = SubResource("RectangleShape2D_ftth5")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1324.19, 317.938)
+shape = SubResource("RectangleShape2D_aevkl")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1324.19, 317.938)
+shape = SubResource("RectangleShape2D_aevkl")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1230, 248)
+shape = SubResource("RectangleShape2D_k8pv4")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(629, 749.25)
+shape = SubResource("RectangleShape2D_ummhh")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(1039, 218)
+shape = SubResource("RectangleShape2D_3d4w4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("9_sei8m")
+
+[node name="Door" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(1063.63, 912)
+shape = SubResource("CircleShape2D_h55g3")
+
+[node name="Keyhole" type="Sprite2D" parent="Area2D"]
+z_index = 1
+position = Vector2(1047, 910)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("10_n4uof")
+
+[node name="Keyhole2" type="Sprite2D" parent="Area2D"]
+z_index = 1
+position = Vector2(1070, 912.4)
+scale = Vector2(0.4, 0.45)
+texture = ExtResource("10_n4uof")
+
+[node name="Digitlock" type="Sprite2D" parent="Area2D"]
+z_index = 1
+position = Vector2(1100, 910)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("11_3krgk")
+
+[node name="Chain" type="Sprite2D" parent="Area2D"]
+z_index = 1
+position = Vector2(1067.04, 914.758)
+scale = Vector2(0.430278, 0.453096)
+texture = ExtResource("12_cjrcu")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 1005.0
+offset_top = 951.0
+offset_right = 1130.0
+offset_bottom = 982.0
+focus_mode = 1
+text = "Enter code"
+alignment = 1
+
+[node name="VaseArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("13_4iw2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VaseArea"]
+z_index = 1
+position = Vector2(1100, 352)
+shape = SubResource("CircleShape2D_io0ts")
+
+[node name="FlowerVase" type="Sprite2D" parent="VaseArea"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(1092.5, 285)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("14_6irh8")
+
+[node name="BedArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("15_f5qas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedArea"]
+z_index = 1
+position = Vector2(643, 432)
+shape = SubResource("CircleShape2D_y3o5b")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="focus_entered" from="LineEdit" to="Area2D" method="_on_line_edit_focus_entered"]
+[connection signal="focus_exited" from="LineEdit" to="Area2D" method="_on_line_edit_focus_exited"]
+[connection signal="text_submitted" from="LineEdit" to="Area2D" method="_on_line_edit_text_submitted"]
+[connection signal="body_entered" from="VaseArea" to="VaseArea" method="_on_body_entered"]
+[connection signal="body_exited" from="VaseArea" to="VaseArea" method="_on_body_exited"]
+[connection signal="body_entered" from="BedArea" to="BedArea" method="_on_body_entered"]
+[connection signal="body_exited" from="BedArea" to="BedArea" method="_on_body_exited"]

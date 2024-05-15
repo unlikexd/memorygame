@@ -1,0 +1,173 @@
+[gd_scene load_steps=18 format=3 uid="uid://d21r2d071fcvn"]
+
+[ext_resource type="Script" path="res://scripts/dream_two.gd" id="1_qf28v"]
+[ext_resource type="Texture2D" uid="uid://r42ot1s53j5x" path="res://pictures/Back_wide.png" id="2_8kru2"]
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="2_ss7kg"]
+[ext_resource type="Texture2D" uid="uid://bvov0nasty84w" path="res://pictures/Dream2 (1).png" id="3_o5pvw"]
+[ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="4_7fx3d"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="5_hrico"]
+[ext_resource type="Texture2D" uid="uid://ba5ma4duwd4wb" path="res://pictures/light2.png" id="6_gxdgg"]
+[ext_resource type="Texture2D" uid="uid://cys86b3su4p62" path="res://pictures/light3.png" id="7_au6o4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6m4c"]
+size = Vector2(1317, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irvek"]
+size = Vector2(20, 1168.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnush"]
+size = Vector2(368.375, 19.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axjfk"]
+size = Vector2(40.8281, 2383)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6xo6"]
+size = Vector2(163.5, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyhh"]
+size = Vector2(19, 555)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mytqe"]
+size = Vector2(875, 22)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8id7k"]
+radius = 1.0
+height = 178.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6n6we"]
+radius = 67.3647
+
+[node name="dream_two" type="Node2D"]
+script = ExtResource("1_qf28v")
+metadata/_edit_vertical_guides_ = [1837.0]
+metadata/_edit_horizontal_guides_ = [4429.0]
+
+[node name="BackWide" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(959, 2209)
+scale = Vector2(1.00417, 1)
+texture = ExtResource("2_8kru2")
+
+[node name="AtlasScene" type="Node" parent="."]
+script = ExtResource("2_ss7kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="AtlasScene"]
+position = Vector2(956, 2330)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_o5pvw")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_7fx3d")]
+z_index = 1
+position = Vector2(960, 540)
+scale = Vector2(0.8, 0.8)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(4.44446, -53.3333)
+zoom = Vector2(1.1, 1.1)
+limit_left = 10
+limit_top = 10
+limit_right = 1920
+limit_bottom = 4430
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="TextBubble" type="Label" parent="CharacterBody2D"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 387.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("5_hrico")
+theme_override_font_sizes/font_size = 20
+text = "Думаю"
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBubble" type="ColorRect" parent="CharacterBody2D/TextBubble"]
+visible = false
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 38.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="Light2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.560784)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(963.2, 503)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_gxdgg")
+
+[node name="Light3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.454902)
+z_index = 2
+position = Vector2(963.2, 3910.4)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_au6o4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(955.5, 257.25)
+shape = SubResource("RectangleShape2D_w6m4c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(306, 856.75)
+shape = SubResource("RectangleShape2D_irvek")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1604, 856)
+shape = SubResource("RectangleShape2D_irvek")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(498.813, 1431.25)
+shape = SubResource("RectangleShape2D_vnush")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1412.13, 1431)
+shape = SubResource("RectangleShape2D_vnush")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(662.586, 2632.5)
+shape = SubResource("RectangleShape2D_axjfk")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1249.92, 2632)
+shape = SubResource("RectangleShape2D_axjfk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(601.5, 3838.5)
+shape = SubResource("RectangleShape2D_d6xo6")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1311.25, 3838)
+shape = SubResource("RectangleShape2D_d6xo6")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(528.5, 4130.5)
+shape = SubResource("RectangleShape2D_6eyhh")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1384, 4130)
+shape = SubResource("RectangleShape2D_6eyhh")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(956.5, 4419)
+shape = SubResource("RectangleShape2D_mytqe")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(961, 4037)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8id7k")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(960, 4069)
+shape = SubResource("CircleShape2D_6n6we")

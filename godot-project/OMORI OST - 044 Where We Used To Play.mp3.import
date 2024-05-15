@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bofrvf1v5r1la"
+path="res://.godot/imported/OMORI OST - 044 Where We Used To Play.mp3-acabbb5331e5f9e79933c0900c9d1f90.mp3str"
+
+[deps]
+
+source_file="res://OMORI OST - 044 Where We Used To Play.mp3"
+dest_files=["res://.godot/imported/OMORI OST - 044 Where We Used To Play.mp3-acabbb5331e5f9e79933c0900c9d1f90.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

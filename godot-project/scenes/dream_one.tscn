@@ -1,0 +1,176 @@
+[gd_scene load_steps=15 format=3 uid="uid://bts7xfv5h1rym"]
+
+[ext_resource type="Script" path="res://scripts/dream_one.gd" id="1_4eaj6"]
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="2_mahhu"]
+[ext_resource type="Texture2D" uid="uid://b7gxxtng5mtju" path="res://pictures/Dream1 (2).png" id="3_jxe7f"]
+[ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="4_j2g52"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="5_qx2p2"]
+[ext_resource type="Texture2D" uid="uid://b5unvmkqpjulx" path="res://pictures/light.png" id="6_g0ap1"]
+[ext_resource type="Script" path="res://scripts/light.gd" id="7_wpe0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgkh0"]
+size = Vector2(2488, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtvow"]
+size = Vector2(2492.75, 61.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1fd2"]
+size = Vector2(36, 472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go8kk"]
+size = Vector2(47.75, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cla04"]
+size = Vector2(86.6004, 50.5582)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv2gu"]
+size = Vector2(71, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23mxm"]
+radius = 65.0077
+
+[node name="DreamOne" type="Node2D"]
+script = ExtResource("1_4eaj6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1410.0
+offset_top = -1428.0
+offset_right = 5253.0
+offset_bottom = 2247.0
+color = Color(0.584314, 0.584314, 0.584314, 1)
+
+[node name="AtlasScene" type="Node" parent="."]
+script = ExtResource("2_mahhu")
+
+[node name="Sprite2D" type="Sprite2D" parent="AtlasScene"]
+position = Vector2(2118, 417)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_jxe7f")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_j2g52")]
+z_index = 1
+position = Vector2(255, 459)
+scale = Vector2(0.8, 0.8)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(4.44446, -53.3333)
+zoom = Vector2(1.1, 1.1)
+limit_left = 35
+limit_top = -275
+limit_right = 3880
+limit_bottom = 1150
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="TextBubble" type="Label" parent="CharacterBody2D"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 387.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("5_qx2p2")
+theme_override_font_sizes/font_size = 20
+text = "Думаю"
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBubble" type="ColorRect" parent="CharacterBody2D/TextBubble"]
+visible = false
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 38.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+top_level = true
+position = Vector2(1278, 360.5)
+shape = SubResource("RectangleShape2D_hgkh0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+top_level = true
+position = Vector2(1291.63, 812.75)
+shape = SubResource("RectangleShape2D_wtvow")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+top_level = true
+position = Vector2(31, 594)
+shape = SubResource("RectangleShape2D_k1fd2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-1, -52)
+polygon = PackedVector2Array(2531, 354, 2533, 206, 2593, 166, 2665, 176, 2761, 136, 2831, 164, 2913, 148, 3091, 146, 3229, 156, 3341, 174, 3487, 186, 3639, 186, 3785, 178, 3818, 228, 3848, 366, 3812, 501, 3782, 607, 3888, 609, 3884, 466.991, 3884, 88, 2487, 86, 2485, 344)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-9, -36)
+polygon = PackedVector2Array(2548, 813, 2552, 994, 2608, 1023, 2702, 1005, 2810, 1023, 2903, 1020, 2993, 1047, 3206, 1047, 3431, 1021, 3649, 1020, 3795, 1010, 3823, 946, 3805, 764, 3812, 735, 3791, 597, 3886, 598, 3887, 1097, 2461, 1087, 2459, 810)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(3209, 576)
+shape = SubResource("RectangleShape2D_go8kk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(3313.13, 537)
+shape = SubResource("RectangleShape2D_go8kk")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(3329.86, 494.278)
+rotation = -0.558505
+shape = SubResource("RectangleShape2D_cla04")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+top_level = true
+position = Vector2(930, 589)
+shape = SubResource("RectangleShape2D_k1fd2")
+disabled = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(3160, 523)
+shape = SubResource("RectangleShape2D_tv2gu")
+
+[node name="Light" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.435294)
+z_index = 2
+position = Vector2(3174, 387)
+scale = Vector2(0.703487, 0.704839)
+texture = ExtResource("6_g0ap1")
+
+[node name="HideStart" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_left = 190.0
+offset_top = 517.0
+offset_right = 329.0
+offset_bottom = 631.0
+color = Color(0.494118, 0.443137, 0.317647, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Area2D"]
+top_level = true
+position = Vector2(948, 589)
+shape = SubResource("RectangleShape2D_k1fd2")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("7_wpe0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+z_index = 1
+position = Vector2(3164, 551)
+shape = SubResource("CircleShape2D_23mxm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

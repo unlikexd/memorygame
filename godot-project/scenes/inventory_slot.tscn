@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnwt1e3u1ddrd"]
+
+[ext_resource type="Script" path="res://scripts/inventory_slot.gd" id="1_kky0k"]
+[ext_resource type="Texture2D" uid="uid://bbflgk2h02bym" path="res://pictures/flower.png" id="2_2syyb"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="3_o3y3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3cl3"]
+
+[node name="InventorySlot" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchor_left = 0.0260417
+anchor_top = 0.0462963
+anchor_right = 0.182292
+anchor_bottom = 0.324074
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_kky0k")
+metadata/_edit_use_anchors_ = true
+
+[node name="OuterBorder" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.301961, 0.494118, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(270, 270)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -135.0
+offset_right = 135.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.772549, 0.772549, 0.772549, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
+position = Vector2(135, 135)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_2syyb")
+
+[node name="ItemButton" type="Button" parent="."]
+custom_minimum_size = Vector2(295, 295)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k3cl3")
+disabled = true
+
+[node name="DetailsPanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 162.0
+offset_right = 370.0
+offset_bottom = 402.0
+grow_vertical = 0
+color = Color(0.301961, 0.301961, 0.494118, 1)
+
+[node name="ItemName" type="Label" parent="DetailsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 307.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("3_o3y3y")
+theme_override_font_sizes/font_size = 80
+text = "Name"
+
+[node name="Description" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.99998
+offset_top = -11.0
+offset_right = 587.0
+offset_bottom = 133.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.686275)
+theme_override_fonts/font = ExtResource("3_o3y3y")
+theme_override_font_sizes/font_size = 50
+text = "Description"
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]

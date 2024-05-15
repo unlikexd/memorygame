@@ -1,0 +1,103 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715805250
+default_bus_layout.tres::AudioBusLayout::-1::1711596932::0::1::::<><>::
+LICENSE.md::TextFile::-1::1711596932::0::1::::<><>::
+OMORI OST - 001 Title.mp3::AudioStreamMP3::331739579261333968::1711596932::1711596932::1::::<><>::
+OMORI OST - 004 Spaces In-between.mp3::AudioStreamMP3::8032164971253413871::1711596932::1711596932::1::::<><>::
+OMORI OST - 005 By Your Side..mp3::AudioStreamMP3::3757535572153816106::1715260312::1715266346::1::::<><>::
+OMORI OST - 044 Where We Used To Play.mp3::AudioStreamMP3::3380456377721484134::1715266845::1715266851::1::::<><>::
+Pixel Times Bold.ttf::FontFile::2507951199698804691::1711596932::1711596932::1::::<><>::
+README.md::TextFile::-1::1711596932::0::1::::<><>::
+::res://addons/::1710396913
+::res://addons/sprite_cutter/::1713976558
+asset_library_icon.png::CompressedTexture2D::1765266963200424859::1711596932::1711596932::1::::<><>::
+AtlasScene.gd::GDScript::-1::1711599211::0::1::::AtlasScene<>Node<>::
+icon.svg::CompressedTexture2D::3030683097792837955::1711596932::1711596932::1::::<><>::
+plugin.cfg::TextFile::-1::1711596932::0::1::::<><>::
+sprite_cutter.gd::GDScript::-1::1711596932::0::1::::<>EditorPlugin<>::
+::res://pictures/::1715805250
+back.png::CompressedTexture2D::5432295945181604279::1711596932::1715776767::1::::<><>::
+Background.png::CompressedTexture2D::7329818096146358355::1712784203::1715776767::1::::<><>::
+Back_wide.png::CompressedTexture2D::1254742695601254327::1715805233::1715805253::1::::<><>::
+bed.png::CompressedTexture2D::8072322458957101051::1715803946::1715803947::1::::<><>::
+chain.png::CompressedTexture2D::7091225856146141062::1712809333::1715776766::1::::<><>::
+chec.png::CompressedTexture2D::1143249043070476154::1712675197::1715776767::1::::<><>::
+closet.png::CompressedTexture2D::3815964507872630706::1715804478::1715804478::1::::<><>::
+digitlock.png::CompressedTexture2D::3186134131513598422::1712809333::1715776766::1::::<><>::
+Dream1 (2).png::CompressedTexture2D::4646288529067243986::1712826147::1715776731::1::::<><>::
+Dream1.png::CompressedTexture2D::1102070755276999236::1711605122::1715776768::1::::<><>::
+Dream2 (1).png::CompressedTexture2D::3890608073992098468::1715267246::1715776775::1::::<><>::
+f.png::CompressedTexture2D::8042742279195775056::1711596932::1715776767::1::::<><>::
+flower.png::CompressedTexture2D::2467610585081033032::1711598987::1715776766::1::::<><>::
+flower_in_vase.png::CompressedTexture2D::3693692112660929032::1711603401::1715776766::1::::<><>::
+key.png::CompressedTexture2D::1224521685742528773::1712766280::1715776766::1::::<><>::
+keyhole.png::CompressedTexture2D::7740757836694486180::1712809333::1715776766::1::::<><>::
+light2.png::CompressedTexture2D::2449082148977919385::1715268909::1715776766::1::::<><>::
+light3.png::CompressedTexture2D::6496591531267996765::1715272122::1715776766::1::::<><>::
+light.png::CompressedTexture2D::4534201016968869909::1712698700::1715776766::1::::<><>::
+load_1.png::CompressedTexture2D::3300157030399115394::1715274224::1715776766::1::::<><>::
+logo.png::CompressedTexture2D::7011277228550375900::1712695960::1715776767::1::::<><>::
+New Piskel (1).png::CompressedTexture2D::2778343683006341794::1711596932::1715776765::1::::<><>::
+player.png::CompressedTexture2D::8268816189562016923::1711596932::1715776765::1::::<><>::
+pxfuel.jpg::CompressedTexture2D::4311880402292189102::1711596932::1715776766::1::::<><>::
+Room1 (2).png::CompressedTexture2D::5328610290839260094::1711596932::1715776768::1::::<><>::
+Room1 (3).png::CompressedTexture2D::526317998724337034::1712765650::1715776768::1::::<><>::
+Room1.png::CompressedTexture2D::8330506519899014391::1711596932::1715776765::1::::<><>::
+room2 (1).png::CompressedTexture2D::8095323733415425711::1711599047::1715776766::1::::<><>::
+room2.png::CompressedTexture2D::1554379521604141840::1711596932::1715776766::1::::<><>::
+Room3 (1).png::CompressedTexture2D::4558087538604072044::1713979975::1715776766::1::::<><>::
+Room4.png::CompressedTexture2D::204117796460312772::1713980136::1715776766::1::::<><>::
+Room5.png::CompressedTexture2D::6330667635079536170::1713980683::1715776768::1::::<><>::
+Room6.png::CompressedTexture2D::8097783671110470334::1715803830::1715803832::1::::<><>::
+Room7.png::CompressedTexture2D::1902674435835502202::1715803840::1715803849::1::::<><>::
+rose (1).png::CompressedTexture2D::3734947831688042726::1715259923::1715776766::1::::<><>::
+::res://scenes/::1715805250
+act_2_1.tscn::PackedScene::6572848614304987619::1715804059::0::1::::<><>::res://scripts/act_2_1.gd<>uid://dcovbekxei4d0::::res://pictures/Background.png<>res://addons/sprite_cutter/AtlasScene.gd<>uid://b568bhnyb65fc::::res://pictures/Room3 (1).png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>res://scripts/door_act2_1.gd<>res://scripts/vase_area_2.gd<>uid://bsvitmjjv6uei::::res://pictures/flower_in_vase.png<>res://scripts/BedArea2.gd
+act_2_2.tscn::PackedScene::6290520601918023746::1715804059::0::1::::<><>::res://scripts/act_2_2.gd<>uid://dcovbekxei4d0::::res://pictures/Background.png<>res://addons/sprite_cutter/AtlasScene.gd<>uid://c5414tnixf2c::::res://pictures/Room4.png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>res://scripts/door_right.gd<>res://scripts/door_left.gd<>res://scripts/flower_box.gd<>res://scripts/docs.gd<>res://scripts/kid_book.gd
+act_2_3.tscn::PackedScene::470712124228402026::1715804059::0::1::::<><>::uid://dcovbekxei4d0::::res://pictures/Background.png<>res://addons/sprite_cutter/AtlasScene.gd<>uid://cwgvf2ycnqjla::::res://pictures/Room5.png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>res://scripts/door_act_2_3.gd<>res://scripts/photograph.gd
+act_3_1.tscn::PackedScene::3650644829898109687::1715804751::0::1::::<><>::res://addons/sprite_cutter/AtlasScene.gd<>uid://dcovbekxei4d0::::res://pictures/Background.png<>uid://dnmvkw678fm51::::res://pictures/Room6.png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>res://scripts/door_act3_1.gd<>uid://dnaj8bcsoc30j::::res://pictures/bed.png
+act_3_2.tscn::PackedScene::21355238910756504::1715804582::0::1::::<><>::uid://dcovbekxei4d0::::res://pictures/Background.png<>res://addons/sprite_cutter/AtlasScene.gd<>uid://2dw1gdb8ai8i::::res://pictures/Room7.png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>uid://bumqm348e5ov7::::res://pictures/closet.png
+bg_audio.tscn::PackedScene::2163687884436128367::1715804058::0::1::::<><>::res://scripts/audio_player.gd
+dream_one.tscn::PackedScene::3759151825848234688::1715804058::0::1::::<><>::res://scripts/dream_one.gd<>res://addons/sprite_cutter/AtlasScene.gd<>uid://b7gxxtng5mtju::::res://pictures/Dream1 (2).png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>uid://b5unvmkqpjulx::::res://pictures/light.png<>res://scripts/light.gd
+dream_two.tscn::PackedScene::9109115253903232487::1715805226::0::1::::<><>::res://scripts/dream_two.gd<>res://addons/sprite_cutter/AtlasScene.gd<>uid://bvov0nasty84w::::res://pictures/Dream2 (1).png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>uid://ba5ma4duwd4wb::::res://pictures/light2.png<>uid://cys86b3su4p62::::res://pictures/light3.png
+inventory_item.tscn::PackedScene::2320377017039673166::1715776702::0::1::::<><>::res://scripts/inventory_item.gd
+inventory_slot.tscn::PackedScene::8118333636758628745::1715776761::0::1::::<><>::res://scripts/inventory_slot.gd<>uid://bbflgk2h02bym::::res://pictures/flower.png<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf
+inventory_ui.tscn::PackedScene::7712903333014057184::1715776702::0::1::::<><>::res://scripts/inventory_ui.gd
+main_menu_music.tscn::PackedScene::3120275491427849901::1711596932::0::1::::<><>::uid://eyxx48h8mit1::::res://OMORI OST - 001 Title.mp3
+memorygame.tscn::PackedScene::462218905530723517::1715804058::0::1::::<><>::res://scripts/memorygame.gd<>uid://dcovbekxei4d0::::res://pictures/Background.png<>res://addons/sprite_cutter/AtlasScene.gd<>uid://hq7m654jdh6i::::res://pictures/Room1 (3).png<>uid://8cajgwer2tik::::res://scenes/inventory_item.tscn<>uid://rpfxtn4nik02::::res://pictures/key.png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>res://scripts/Area2D.gd<>uid://dijxfeeojmri7::::res://pictures/keyhole.png<>uid://blnnftf7bxxhe::::res://pictures/digitlock.png<>uid://c8bbpousgp5la::::res://pictures/chain.png<>res://scripts/VaseArea.gd<>uid://bsvitmjjv6uei::::res://pictures/flower_in_vase.png<>res://scripts/BedArea.gd
+menu.tscn::PackedScene::6303740882435125812::1715804058::0::1::::<><>::res://scripts/menu.gd<>uid://b2oybmscnd415::::res://pictures/pxfuel.jpg<>uid://c65kyguqodkjk::::res://pictures/logo.png<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>uid://eyxx48h8mit1::::res://OMORI OST - 001 Title.mp3
+player.tscn::PackedScene::1361200678965692836::1715804058::0::1::::<><>::res://scripts/player.gd<>uid://qj2e6jvkm3ms::::res://pictures/chec.png<>uid://dmt714tejrp65::::res://pictures/f.png<>uid://cjnpedmbwrjh4::::res://pictures/back.png<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>uid://dh5gnka4nwfbk::::res://scenes/inventory_ui.tscn
+scene_transition.tscn::PackedScene::6530332485062205937::1715804058::0::1::::<><>::res://scripts/scene_transition.gd<>uid://bthibse2xv383::::res://pictures/rose (1).png<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf
+second_room.tscn::PackedScene::1131235283831912545::1715804058::0::1::::<><>::res://addons/sprite_cutter/AtlasScene.gd<>uid://dnlo2f2x58ih0::::res://pictures/room2 (1).png<>uid://tnm1nobg8j45::::res://scenes/player.tscn<>res://scripts/Area2D1.gd<>res://scripts/FlowerPickup.gd<>uid://bbflgk2h02bym::::res://pictures/flower.png<>uid://bby4ub4ge7pct::::res://Pixel Times Bold.ttf<>uid://8cajgwer2tik::::res://scenes/inventory_item.tscn
+::res://scripts/::1715804751
+act_2_1.gd::GDScript::-1::1715777596::0::1::::<>Node2D<>::
+act_2_2.gd::GDScript::-1::1713986186::0::1::::<>Node2D<>::
+Area2D1.gd::GDScript::-1::1715776336::0::1::::<>Area2D<>::
+Area2D.gd::GDScript::-1::1715776363::0::1::::<>Area2D<>::
+audio_player.gd::GDScript::-1::1715266913::0::1::::<>AudioStreamPlayer<>::
+BedArea2.gd::GDScript::-1::1715795396::0::1::::<>Area2D<>::
+BedArea.gd::GDScript::-1::1715776239::0::1::::<>Area2D<>::
+docs.gd::GDScript::-1::1715793571::0::1::::<>Area2D<>::
+door_act2_1.gd::GDScript::-1::1715777772::0::1::::<>Area2D<>::
+door_act3_1.gd::GDScript::-1::1715804751::0::1::::<>Area2D<>::
+door_act_2_3.gd::GDScript::-1::1715804736::0::1::::<>Area2D<>::
+door_left.gd::GDScript::-1::1715776203::0::1::::<>Area2D<>::
+door_right.gd::GDScript::-1::1715776376::0::1::::<>Area2D<>::
+dream_one.gd::GDScript::-1::1715266466::0::1::::<>Node2D<>::
+dream_two.gd::GDScript::-1::1715272666::0::1::::<>Node2D<>::
+FlowerPickup.gd::GDScript::-1::1712780908::0::1::::<>Area2D<>::
+flower_box.gd::GDScript::-1::1715793542::0::1::::<>Area2D<>::
+global.gd::GDScript::-1::1715793485::0::1::::<>Node<>::
+Idle.gd::GDScript::-1::1710396913::0::1::::<>AnimatedSprite2D<>::
+inventory_item.gd::GDScript::-1::1715776443::0::1::::<>Node2D<>::
+inventory_slot.gd::GDScript::-1::1712776898::0::1::::<>Control<>::
+inventory_ui.gd::GDScript::-1::1712780858::0::1::::<>Control<>::
+kid_book.gd::GDScript::-1::1715793560::0::1::::<>Area2D<>::
+light.gd::GDScript::-1::1715794340::0::1::::<>Area2D<>::
+memorygame.gd::GDScript::-1::1715265868::0::1::::<>Node2D<>::
+menu.gd::GDScript::-1::1715776459::0::1::::<>Control<>::
+photograph.gd::GDScript::-1::1715794147::0::1::::<>Area2D<>::
+player.gd::GDScript::-1::1713995361::0::1::::<>CharacterBody2D<>::
+scene_transition.gd::GDScript::-1::1715774287::0::1::::<>CanvasLayer<>::
+VaseArea.gd::GDScript::-1::1715259662::0::1::::<>Area2D<>::
+vase_area_2.gd::GDScript::-1::1715795562::0::1::::<>Area2D<>::

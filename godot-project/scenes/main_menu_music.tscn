@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkpqqmtsft5gb"]
+
+[ext_resource type="AudioStream" uid="uid://eyxx48h8mit1" path="res://OMORI OST - 001 Title.mp3" id="1_1icc5"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_1icc5")
+volume_db = -26.475
+autoplay = true

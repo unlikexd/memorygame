@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=3 uid="uid://bsant7s05pqyp"]
+
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_lof5c"]
+[ext_resource type="Texture2D" uid="uid://dcovbekxei4d0" path="res://pictures/Background.png" id="1_sk653"]
+[ext_resource type="Texture2D" uid="uid://dnmvkw678fm51" path="res://pictures/Room6.png" id="2_a6uyg"]
+[ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="3_ajwgw"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="4_00l7l"]
+[ext_resource type="Script" path="res://scripts/door_act3_1.gd" id="5_1pkry"]
+[ext_resource type="Texture2D" uid="uid://dnaj8bcsoc30j" path="res://pictures/bed.png" id="5_ratrm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uax7u"]
+size = Vector2(896, 61.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4krm"]
+size = Vector2(900, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x56fn"]
+size = Vector2(40.5, 326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja421"]
+size = Vector2(39, 276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewdkg"]
+size = Vector2(40, 731)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td1qd"]
+size = Vector2(174, 243.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0cbc"]
+size = Vector2(157, 341)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_24r1x"]
+radius = 83.1505
+
+[node name="Act3_1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(949, 530.5)
+scale = Vector2(0.803333, 0.904167)
+texture = ExtResource("1_sk653")
+
+[node name="AtlasScene" type="Node" parent="."]
+script = ExtResource("1_lof5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="AtlasScene"]
+position = Vector2(960, 540)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_a6uyg")
+region_enabled = true
+region_rect = Rect2(-0.198246, -0.209969, 5976.56, 5460.43)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_ajwgw")]
+z_index = 2
+position = Vector2(783, 477)
+scale = Vector2(0.9, 0.9)
+collision_layer = 29
+
+[node name="TextBubble" type="Label" parent="CharacterBody2D"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 410.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("4_00l7l")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBubble" type="ColorRect" parent="CharacterBody2D/TextBubble"]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_right = 324.0
+offset_bottom = 65.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, 164.25)
+shape = SubResource("RectangleShape2D_uax7u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(958, 928.75)
+shape = SubResource("RectangleShape2D_u4krm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(529.75, 349)
+shape = SubResource("RectangleShape2D_x56fn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(527.5, 779)
+shape = SubResource("RectangleShape2D_ja421")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1388, 552.5)
+shape = SubResource("RectangleShape2D_ewdkg")
+
+[node name="BedBody" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="bed" type="Sprite2D" parent="BedBody"]
+position = Vector2(635, 604)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_ratrm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedBody"]
+position = Vector2(635, 527.25)
+shape = SubResource("RectangleShape2D_td1qd")
+
+[node name="BedArea" type="Area2D" parent="BedBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedBody/BedArea"]
+position = Vector2(634.5, 534.5)
+shape = SubResource("RectangleShape2D_o0cbc")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+script = ExtResource("5_1pkry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(529, 577)
+shape = SubResource("CircleShape2D_24r1x")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
