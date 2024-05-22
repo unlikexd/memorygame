@@ -9,10 +9,11 @@ var entered = false
 func _on_body_entered(_body: PhysicsBody2D):
 	entered = true
 	if !Global.first_entered:
-		Global.first_entered = true
 		Global.dialogue_bubble(bubble,
 		 "Странно, не помню, чтобы в вазе не было цветка. Наверное, надо вернуть его на место. Но где он может быть?",
 		4)	
+		await get_tree().create_timer(6).timeout
+		Global.first_entered = true
 	
 func _on_body_exited(_body):
 	entered = false
@@ -27,7 +28,7 @@ func _physics_process(_delta):
 			Global.dialogue_bubble(bubble, "Так-то лучше.", 1)
 			await get_tree().create_timer(3).timeout
 			ending_sequence()
-		if Input.is_action_just_pressed("interact") and !Global.returned:
+		if Input.is_action_just_pressed("interact") and !Global.returned and Global.first_entered:
 			Global.dialogue_bubble(bubble, "На бумажке написаны числа 7055. Стоит запомнить", 2)
 			
 

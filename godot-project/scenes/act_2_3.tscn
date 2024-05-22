@@ -46,7 +46,7 @@ texture = ExtResource("3_wm4k0")
 z_index = 1
 position = Vector2(1319, 550)
 scale = Vector2(0.9, 0.9)
-collision_layer = 29
+collision_layer = 31
 
 [node name="TextBubble" type="Label" parent="CharacterBody2D"]
 offset_left = 32.0
@@ -96,6 +96,7 @@ position = Vector2(1277, 852)
 shape = SubResource("RectangleShape2D_p2856")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 script = ExtResource("6_0ix8x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -105,6 +106,7 @@ shape = SubResource("CircleShape2D_xy12t")
 
 [node name="Area2D2" type="Area2D" parent="."]
 z_index = 1
+collision_mask = 8
 script = ExtResource("7_2obrb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]

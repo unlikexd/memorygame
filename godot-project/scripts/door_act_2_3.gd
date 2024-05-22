@@ -14,5 +14,4 @@ func _physics_process(_delta):
 	if entered == true:
 		if Input.is_action_just_pressed("interact"):
 			Global.returned_2 = true
-			Global.save_current_scene_pos(player)
-			SceneTransition.change_scene("res://scenes/act_2_3.tscn", "2")
+			SceneTransition.change_scene("res://scenes/act_2_2.tscn", "2")

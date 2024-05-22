@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://klynvdloibw"]
+[gd_scene load_steps=25 format=3 uid="uid://klynvdloibw"]
 
 [ext_resource type="Texture2D" uid="uid://dcovbekxei4d0" path="res://pictures/Background.png" id="1_rjxio"]
 [ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="2_0gldg"]
@@ -6,10 +6,40 @@
 [ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="4_kwnyv"]
 [ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="5_o8ks6"]
 [ext_resource type="Texture2D" uid="uid://bumqm348e5ov7" path="res://pictures/closet.png" id="6_dbm03"]
+[ext_resource type="Texture2D" uid="uid://q2jgti0baj1o" path="res://pictures/heaven.png" id="6_dkemy"]
+[ext_resource type="Script" path="res://scripts/heavensdoor.gd" id="6_r1c8v"]
+[ext_resource type="Texture2D" uid="uid://du82psqccv34u" path="res://pictures/me.png" id="7_lp1lx"]
+[ext_resource type="Texture2D" uid="uid://cq7h0jd6874ry" path="res://pictures/us.png" id="8_gr432"]
+[ext_resource type="Texture2D" uid="uid://djvrf0cxhy4n2" path="res://pictures/family.png" id="9_mpbr1"]
+[ext_resource type="Script" path="res://scripts/door_act3_2.gd" id="10_87o2i"]
+[ext_resource type="PackedScene" uid="uid://8cajgwer2tik" path="res://scenes/inventory_item.tscn" id="10_gwbeo"]
+[ext_resource type="Script" path="res://scripts/BookCase.gd" id="10_pkf6n"]
+[ext_resource type="Texture2D" uid="uid://0wmaiwvo2cgm" path="res://pictures/us_item.png" id="11_epbeq"]
+[ext_resource type="Texture2D" uid="uid://blrea6f3s7mvb" path="res://pictures/door_open.png" id="14_bg2gq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcs5n"]
+radius = 87.0919
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ouo25"]
+size = Vector2(221, 134.182)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iaph"]
+size = Vector2(300, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fgfi"]
+size = Vector2(1426, 130.688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ifmd"]
+size = Vector2(55.25, 882)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hssh"]
+size = Vector2(45, 414)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o752"]
+size = Vector2(50, 308)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jf40m"]
+radius = 104.077
 
 [node name="Act3_2" type="Node2D"]
 
@@ -23,15 +53,17 @@ texture = ExtResource("1_rjxio")
 script = ExtResource("2_0gldg")
 
 [node name="Sprite2D" type="Sprite2D" parent="AtlasScene"]
+light_mask = 2
 position = Vector2(960, 540)
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.19, 0.19)
 texture = ExtResource("3_vtsy6")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_kwnyv")]
 z_index = 2
-position = Vector2(1425, 521)
+position = Vector2(1566, 523)
 scale = Vector2(0.9, 0.9)
-collision_layer = 29
+collision_layer = 61
+collision_mask = 5
 
 [node name="TextBubble" type="Label" parent="CharacterBody2D"]
 offset_left = 32.0
@@ -53,18 +85,112 @@ offset_right = 324.0
 offset_bottom = 65.0
 color = Color(0.466667, 0.466667, 0.466667, 0.721569)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="heavensdoor" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+light_mask = 2
 z_index = 1
+position = Vector2(0, -56)
+collision_layer = 4
+collision_mask = 32
+script = ExtResource("6_r1c8v")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="heavenlight" type="PointLight2D" parent="heavensdoor"]
+position = Vector2(960, 221)
+scale = Vector2(0.001, 0.001)
+color = Color(1, 1, 0.882353, 0.713726)
+range_item_cull_mask = 2
+texture = ExtResource("6_dkemy")
+
+[node name="DoorOpen" type="Sprite2D" parent="heavensdoor"]
+light_mask = 2
+position = Vector2(961.5, 220)
+scale = Vector2(0.71831, 0.744337)
+texture = ExtResource("14_bg2gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="heavensdoor"]
+z_index = 1
+position = Vector2(964, 153)
+shape = SubResource("CircleShape2D_xcs5n")
+
+[node name="Closet" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-100, -110)
+scale = Vector2(1.1, 1.1)
+
+[node name="ClosetSprite" type="Sprite2D" parent="Closet"]
 position = Vector2(962, 271)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_dbm03")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Me" type="Sprite2D" parent="Closet"]
+visible = false
+position = Vector2(971.23, 288.18)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("7_lp1lx")
+
+[node name="Us" type="Sprite2D" parent="Closet"]
+position = Vector2(960, 288.182)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("8_gr432")
+
+[node name="Family" type="Sprite2D" parent="Closet"]
+visible = false
+position = Vector2(949.79, 288.19)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("9_mpbr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Closet"]
+position = Vector2(963.5, 211.091)
 shape = SubResource("RectangleShape2D_ouo25")
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+[node name="BookCase" type="Area2D" parent="Closet"]
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("10_pkf6n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Closet/BookCase"]
+position = Vector2(961, 220.5)
 shape = SubResource("RectangleShape2D_4iaph")
+
+[node name="InventoryItem" parent="Closet" instance=ExtResource("10_gwbeo")]
+visible = false
+item_texture = ExtResource("11_epbeq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(961, 71.6563)
+shape = SubResource("RectangleShape2D_6fgfi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(957, 1019)
+shape = SubResource("RectangleShape2D_6fgfi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(270.375, 537)
+shape = SubResource("RectangleShape2D_3ifmd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1648.5, 297)
+shape = SubResource("RectangleShape2D_4hssh")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1647, 822)
+shape = SubResource("RectangleShape2D_2o752")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+collision_mask = 8
+script = ExtResource("10_87o2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1647, 585)
+shape = SubResource("CircleShape2D_jf40m")
+
+[connection signal="body_entered" from="heavensdoor" to="heavensdoor" method="_on_body_entered"]
+[connection signal="body_exited" from="heavensdoor" to="heavensdoor" method="_on_body_exited"]
+[connection signal="body_entered" from="Closet/BookCase" to="Closet/BookCase" method="_on_body_entered"]
+[connection signal="body_exited" from="Closet/BookCase" to="Closet/BookCase" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

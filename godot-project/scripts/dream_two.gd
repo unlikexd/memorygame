@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var player = $CharacterBody2D
 
+func _ready():
+	BgAudio.play()
+	BgAudio.play_music_level(1)
+
 func _physics_process(_delta):
 	if player.position.y > 580 and player.position.y < 3600:
 		player.z_index = 3

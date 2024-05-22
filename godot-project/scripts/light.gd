@@ -25,6 +25,7 @@ func _physics_process(_delta):
 			Global.returned = false
 			Global.flower_placed = false
 			Global.just_woke_up = true
+			Global.lock_opened = false
 
 func end_of_dream(move_direction, start):
 	Global.grab_controls = true

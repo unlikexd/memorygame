@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdj5qu0cseiwh"]
+
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="1_eqpas"]
+[ext_resource type="Script" path="res://scripts/box_ui.gd" id="1_r1t5c"]
+
+[node name="BoxUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1t5c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 180.0
+offset_right = 1540.0
+offset_bottom = 900.0
+color = Color(0.341176, 0.247059, 0.196078, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 254.0
+offset_right = 840.0
+offset_bottom = 465.0
+color = Color(0.490196, 0.490196, 0.490196, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 265.0
+offset_right = 829.0
+offset_bottom = 453.0
+color = Color(0.505882, 0.584314, 0.627451, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 138.0
+offset_right = 633.0
+offset_bottom = 227.0
+theme_override_fonts/font = ExtResource("1_eqpas")
+theme_override_font_sizes/font_size = 42
+text = "Не забудь код, это имя
+близкого тебе человека!"
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -54.0
+offset_right = 224.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_eqpas")
+theme_override_font_sizes/font_size = 100
+placeholder_text = "****"
+alignment = 1
+max_length = 4
+flat = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 725.0
+offset_right = 1126.0
+offset_bottom = 784.0
+color = Color(0.505882, 0.584314, 0.627451, 1)
+
+[node name="Button" type="Button" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 304.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("1_eqpas")
+theme_override_font_sizes/font_size = 30
+text = "ПОДТВЕРДИТЬ"
+
+[connection signal="pressed" from="ColorRect2/Button" to="." method="_on_button_pressed"]

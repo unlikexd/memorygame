@@ -206,17 +206,6 @@ position = Vector2(1067.04, 914.758)
 scale = Vector2(0.430278, 0.453096)
 texture = ExtResource("12_cjrcu")
 
-[node name="LineEdit" type="LineEdit" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
-offset_left = 1005.0
-offset_top = 951.0
-offset_right = 1130.0
-offset_bottom = 982.0
-focus_mode = 1
-text = "Enter code"
-alignment = 1
-
 [node name="VaseArea" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 8
@@ -246,9 +235,6 @@ shape = SubResource("CircleShape2D_y3o5b")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="focus_entered" from="LineEdit" to="Area2D" method="_on_line_edit_focus_entered"]
-[connection signal="focus_exited" from="LineEdit" to="Area2D" method="_on_line_edit_focus_exited"]
-[connection signal="text_submitted" from="LineEdit" to="Area2D" method="_on_line_edit_text_submitted"]
 [connection signal="body_entered" from="VaseArea" to="VaseArea" method="_on_body_entered"]
 [connection signal="body_exited" from="VaseArea" to="VaseArea" method="_on_body_exited"]
 [connection signal="body_entered" from="BedArea" to="BedArea" method="_on_body_entered"]

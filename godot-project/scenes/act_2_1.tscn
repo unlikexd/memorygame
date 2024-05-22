@@ -59,10 +59,11 @@ scale = Vector2(0.432, 0.432)
 texture = ExtResource("4_c8785")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_orf6u")]
-z_index = 1
+z_index = 2
 position = Vector2(1005, 393)
 scale = Vector2(0.9, 0.9)
-collision_layer = 29
+collision_layer = 31
+collision_mask = 3
 
 [node name="TextBubble" type="Label" parent="CharacterBody2D"]
 offset_left = 32.0

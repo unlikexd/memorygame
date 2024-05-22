@@ -9,6 +9,7 @@ var just_woke_up = true
 var got_first_key = false
 var animated_scene = false
 var has_interacted = false
+var lock_opened = false
 var pos_x = 0
 var pos_y = 0
 

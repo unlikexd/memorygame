@@ -13,6 +13,6 @@ func _on_body_exited(_body):
 func _physics_process(_delta):
 	if entered == true:
 		if Input.is_action_just_pressed("interact"):
-			Global.returned_2 = true
+			Global.returned = true
 			Global.save_current_scene_pos(player)
 			SceneTransition.change_scene("res://scenes/act_3_2.tscn", "3")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr7q4xiqkoyg"]
+
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_7x5e8"]
+[ext_resource type="Texture2D" uid="uid://dykw0dw4i4oax" path="res://pictures/final.png" id="2_20i17"]
+[ext_resource type="Texture2D" uid="uid://dcovbekxei4d0" path="res://pictures/Background.png" id="3_7tfan"]
+[ext_resource type="Texture2D" uid="uid://48rpsrbslb6" path="res://pictures/Lena.png" id="4_1tih5"]
+
+[node name="Final" type="Node2D"]
+
+[node name="AtlasScene" type="Node" parent="."]
+script = ExtResource("1_7x5e8")
+
+[node name="Sprite2D" type="Sprite2D" parent="AtlasScene"]
+position = Vector2(960, 540)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_20i17")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(949, 530.5)
+scale = Vector2(0.803333, 0.904167)
+texture = ExtResource("3_7tfan")
+
+[node name="Lena" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(992, 393)
+texture = ExtResource("4_1tih5")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://tnm1nobg8j45"]
+[gd_scene load_steps=29 format=3 uid="uid://tnm1nobg8j45"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_s3fn4"]
 [ext_resource type="Texture2D" uid="uid://qj2e6jvkm3ms" path="res://pictures/chec.png" id="2_ftpgo"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cjnpedmbwrjh4" path="res://pictures/back.png" id="4_74b8d"]
 [ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="5_8qakh"]
 [ext_resource type="PackedScene" uid="uid://dh5gnka4nwfbk" path="res://scenes/inventory_ui.tscn" id="6_lkme3"]
+[ext_resource type="PackedScene" uid="uid://c38u301t38hri" path="res://scenes/lock_ui.tscn" id="7_1gtva"]
+[ext_resource type="PackedScene" uid="uid://bdj5qu0cseiwh" path="res://scenes/box_ui.tscn" id="8_mpmfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s21be"]
 size = Vector2(115, 183)
@@ -214,6 +216,7 @@ position = Vector2(-0.5, 67.5)
 shape = SubResource("RectangleShape2D_s21be")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 3
 texture_filter = 1
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_8eu63")
@@ -247,3 +250,34 @@ text = "ИНВЕНТАРЬ"
 
 [node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("6_lkme3")]
 layout_mode = 1
+
+[node name="LockUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Lock" type="ColorRect" parent="LockUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="LockUI" parent="LockUI/Lock" instance=ExtResource("7_1gtva")]
+layout_mode = 1
+
+[node name="BoxUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="BoxUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="BoxUI" parent="BoxUI/ColorRect" instance=ExtResource("8_mpmfs")]
+layout_mode = 1
+
+[connection signal="code_correct" from="LockUI/Lock/LockUI" to="." method="_on_lock_ui_code_correct"]
+[connection signal="correct_answer" from="BoxUI/ColorRect/BoxUI" to="." method="_on_box_ui_correct_answer"]

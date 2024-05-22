@@ -9,15 +9,16 @@ var entered = false
 func _on_body_entered(_body: PhysicsBody2D):
 	entered = true
 	if !Global.first_entered:
-		Global.first_entered = true
 		Global.dialogue_bubble(bubble, "В вазах обычно бывают цветы. Жаль, что мне их давно никто не дарил", 4)	
+		await get_tree().create_timer(6).timeout
+		Global.first_entered = true
 
 func _on_body_exited(_body):
 	entered = false
 
 func _physics_process(_delta):
 	if entered == true:
-		if Input.is_action_just_pressed("interact") && Global.remove_item("Цветок"):
+		if Input.is_action_just_pressed("interact") && Global.first_entered && Global.remove_item("Цветок"):
 			Global.flower_placed = true
 			var tween = create_tween()
 			tween.tween_property(flower, "modulate", Color(1, 1, 1, 1), 0.5).set_ease(Tween.EASE_IN)

@@ -6,7 +6,9 @@ var last_direction = [0, 1]
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 @onready var inventory_ui = $InventoryUI
-
+@onready var lock_ui = $LockUI
+@onready var box_ui = $BoxUI
+@onready var get_code = $LockUI/Lock/LockUI
 
 func _ready():
 	Global.set_player_reference(self)
@@ -55,7 +57,7 @@ func _physics_process(_delta: float) -> void:
 			[-1.0, 0.0]:
 				anim_sprite.play("interact_left")
 				
-				
+	
 	velocity.x = move_toward(velocity.x, speed * direction.x, accel)
 	velocity.y = move_toward(velocity.y, speed * direction.y, accel)
 	move_and_slide()
@@ -64,3 +66,21 @@ func _input(event):
 	if event.is_action_pressed('inventory') and !Global.grab_controls:
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
+	if Input.is_action_just_pressed('ui_cancel'):
+		lock_ui.visible = false
+		box_ui.visible = false
+		get_tree().paused = false
+
+
+func _on_lock_ui_code_correct():
+	await get_tree().create_timer(1).timeout
+	Global.lock_opened = true
+	lock_ui.visible = false
+	get_tree().paused = false
+	
+
+func _on_box_ui_correct_answer():
+	await get_tree().create_timer(1).timeout
+	Global.lock_opened = true
+	box_ui.visible = false
+	get_tree().paused = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cvvf7qjomdevq"]
+[gd_scene load_steps=26 format=3 uid="uid://cvvf7qjomdevq"]
 
 [ext_resource type="Script" path="res://scripts/act_2_2.gd" id="1_6g5oj"]
 [ext_resource type="Texture2D" uid="uid://dcovbekxei4d0" path="res://pictures/Background.png" id="1_w7yl2"]
@@ -9,8 +9,10 @@
 [ext_resource type="Script" path="res://scripts/door_right.gd" id="6_uljl1"]
 [ext_resource type="Script" path="res://scripts/door_left.gd" id="7_civcx"]
 [ext_resource type="Script" path="res://scripts/flower_box.gd" id="9_obg4h"]
+[ext_resource type="PackedScene" uid="uid://8cajgwer2tik" path="res://scenes/inventory_item.tscn" id="10_scift"]
 [ext_resource type="Script" path="res://scripts/docs.gd" id="10_tob0l"]
 [ext_resource type="Script" path="res://scripts/kid_book.gd" id="11_sliw4"]
+[ext_resource type="Texture2D" uid="uid://bbflgk2h02bym" path="res://pictures/flower.png" id="11_xvdwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8afp"]
 size = Vector2(1073, 80)
@@ -159,6 +161,12 @@ script = ExtResource("9_obg4h")
 z_index = 1
 position = Vector2(1214, 405)
 shape = SubResource("CircleShape2D_vvrj3")
+
+[node name="FlowerItem" parent="Area2D3" instance=ExtResource("10_scift")]
+visible = false
+item_name = "Цветок"
+item_description = "Идеален для вазы"
+item_texture = ExtResource("11_xvdwv")
 
 [node name="Area2D4" type="Area2D" parent="."]
 collision_layer = 2

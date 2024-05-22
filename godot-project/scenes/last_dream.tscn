@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://chsgb842llp5n"]
+
+[ext_resource type="Script" path="res://scripts/last_dream.gd" id="1_7go70"]
+[ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="1_i5kt5"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="2_e1la8"]
+[ext_resource type="Texture2D" uid="uid://cwect2r25b0be" path="res://pictures/deathbed.png" id="4_j33n8"]
+[ext_resource type="Script" path="res://scripts/FinalStep.gd" id="4_vnpb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8s5u"]
+size = Vector2(1927, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6uv3"]
+size = Vector2(17, 1794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sn7h"]
+size = Vector2(1930.5, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7f5p"]
+size = Vector2(155, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgckm"]
+size = Vector2(167, 212)
+
+[node name="LastDream" type="Node2D"]
+script = ExtResource("1_7go70")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1924.0
+offset_bottom = 1944.0
+size_flags_horizontal = 4
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_i5kt5")]
+z_index = 1
+position = Vector2(316, 147)
+scale = Vector2(0.8, 0.8)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(4.44446, -53.3333)
+zoom = Vector2(2, 2)
+limit_left = 10
+limit_top = 10
+limit_right = 1910
+limit_bottom = 1940
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="TextBubble" type="Label" parent="CharacterBody2D"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 387.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("2_e1la8")
+theme_override_font_sizes/font_size = 20
+text = "Думаю"
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBubble" type="ColorRect" parent="CharacterBody2D/TextBubble"]
+visible = false
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 38.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960.5, 64.5)
+shape = SubResource("RectangleShape2D_w8s5u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3.5, 1021)
+shape = SubResource("RectangleShape2D_y6uv3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(964.75, 1932.75)
+shape = SubResource("RectangleShape2D_6sn7h")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1917, 1021)
+shape = SubResource("RectangleShape2D_y6uv3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1550.5, 1504)
+shape = SubResource("RectangleShape2D_o7f5p")
+
+[node name="FinalStep" type="Area2D" parent="."]
+script = ExtResource("4_vnpb0")
+
+[node name="Deathbed" type="Sprite2D" parent="FinalStep"]
+position = Vector2(1551, 1569)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_j33n8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalStep"]
+position = Vector2(1549.5, 1506)
+shape = SubResource("RectangleShape2D_mgckm")
+
+[connection signal="body_entered" from="FinalStep" to="FinalStep" method="_on_body_entered"]
+[connection signal="body_exited" from="FinalStep" to="FinalStep" method="_on_body_exited"]
