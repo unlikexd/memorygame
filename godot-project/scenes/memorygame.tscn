@@ -70,26 +70,8 @@ texture = ExtResource("4_jrrtt")
 region_enabled = true
 region_rect = Rect2(2063.79, 2191.9, 2016.48, 1845.59)
 
-[node name="InventoryItem" parent="." instance=ExtResource("5_7m8km")]
-z_index = 1
-position = Vector2(670, 630)
-rotation = -0.698132
-scale = Vector2(0.5, 0.5)
-item_name = "Ключ"
-item_description = "Открывает замок"
-item_texture = ExtResource("6_5pbgv")
-
-[node name="InventoryItem2" parent="." instance=ExtResource("5_7m8km")]
-z_index = 1
-z_as_relative = false
-position = Vector2(1305, 514)
-scale = Vector2(0.5, 0.5)
-item_name = "Ключ2"
-item_description = "Открывает замок"
-item_texture = ExtResource("6_5pbgv")
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_xshbw")]
-z_index = 1
+z_index = 2
 position = Vector2(641, 424)
 scale = Vector2(0.9, 0.9)
 collision_layer = 29
@@ -112,6 +94,23 @@ layout_mode = 0
 offset_right = 324.0
 offset_bottom = 65.0
 color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="InventoryItem" parent="." instance=ExtResource("5_7m8km")]
+z_index = 1
+position = Vector2(670, 630)
+rotation = -0.698132
+scale = Vector2(0.5, 0.5)
+item_name = "Ключ"
+item_description = "Открывает замок"
+item_texture = ExtResource("6_5pbgv")
+
+[node name="InventoryItem2" parent="." instance=ExtResource("5_7m8km")]
+z_index = 1
+position = Vector2(1305, 514)
+scale = Vector2(0.5, 0.5)
+item_name = "Ключ2"
+item_description = "Открывает замок"
+item_texture = ExtResource("6_5pbgv")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-2, 0)

@@ -31,6 +31,7 @@ func pickup_item():
 		"description": item_description,
 		"scene_path": scene_path
 	}
+	Sfx.play_sound(1)
 	if Global.player_node:
 		Global.add_item(item)
 		self.queue_free()

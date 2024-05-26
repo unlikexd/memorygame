@@ -6,4 +6,5 @@
 process_mode = 3
 volume_db = -24.575
 autoplay = true
+bus = &"music"
 script = ExtResource("1_wihvw")

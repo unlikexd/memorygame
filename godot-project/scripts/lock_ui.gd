@@ -6,6 +6,8 @@ extends Control
 @export var code = ''
 signal code_correct
 
+var inputs
+
 func _on_button_pressed():
 	label.text = label.text + '1'
 
@@ -43,8 +45,9 @@ func _on_button_9_pressed():
 	
 func _process(delta):
 	label.visible_characters = 4
-	if label.get_text().length() >= 4:
-		if label.get_text() == '7055':
+	if label.get_text().length() == 4:
+		inputs = label.get_text()
+		if inputs == '7055':
 			code = '1'
 			code_correct.emit()
 			lamp.color = Color(0.17, 0.59, 0.22)

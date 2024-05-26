@@ -1,4 +1,10 @@
+Label
 ColorRect
+Control
+Timer
+AudioStreamPlayer
+AudioStreamPlayer2D
+HSlider
 Sprite2D
 AtlasScene
 CollisionShape2D
@@ -7,8 +13,3 @@ StaticBody2D
 LightOccluder2D
 DirectionalLight2D
 PointLight2D
-Button
-LineEdit
-Label
-CanvasLayer
-GridContainer

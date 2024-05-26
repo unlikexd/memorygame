@@ -21,9 +21,6 @@ func _physics_process(_delta):
 		if Global.flower_placed:
 			return
 		if Input.is_action_just_pressed("interact"):
-			if !Global.lock_opened && !Global.returned:
-				player.lock_ui.visible = !player.lock_ui.visible
-				get_tree().paused = !get_tree().paused
 			if Global.remove_item("Ключ"):
 				var tween = create_tween()
 				tween.tween_property(keyhole1, "modulate", Color(1, 1, 1, 0), 0.5).set_ease(Tween.EASE_OUT)
@@ -32,21 +29,26 @@ func _physics_process(_delta):
 				var tween = create_tween()
 				tween.tween_property(keyhole2, "modulate", Color(1, 1, 1, 0), 0.5).set_ease(Tween.EASE_OUT)
 				return
+			if !Global.lock_opened && !Global.returned:
+				player.lock_ui.visible = !player.lock_ui.visible
+				get_tree().paused = !get_tree().paused
+				Sfx.play_sound(2, -15.0)
+				return
 			if !Global.returned:
 				return
 			else:
 				Global.save_current_scene_pos(player)
 				SceneTransition.change_scene("res://scenes/second_room.tscn", "1")
+		if Global.lock_opened:
+			var tween = create_tween()
+			tween.tween_property(digitlock, "modulate", Color(1, 1, 1, 0), 0.5).set_ease(Tween.EASE_OUT)
+			
 		if Global.lock_opened and keyhole1.modulate == Color(1, 1, 1, 0) and keyhole2.modulate == Color(1, 1, 1, 0):
 			await get_tree().create_timer(0.5).timeout
 			var tween = create_tween()
 			tween.tween_property(chain, "modulate", Color(1, 1, 1, 0), 0.5).set_ease(Tween.EASE_OUT)
 			Global.returned = true
 			return
-		if Global.lock_opened:
-			var tween = create_tween()
-			tween.tween_property(digitlock, "modulate", Color(1, 1, 1, 0), 0.5).set_ease(Tween.EASE_OUT)
-			Global.lock_opened = false
 			
 		if Global.returned:
 			keyhole1.hide()

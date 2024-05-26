@@ -36,15 +36,20 @@ func _physics_process(_delta: float) -> void:
 				anim_sprite.play("idle_up")
 			[-1.0, 0.0]:
 				anim_sprite.play("idle_left")
+		Sfx.stop()
 				
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_just_pressed("move_down"):
 		anim_sprite.play("move_down")
-	elif Input.is_action_pressed("move_left"):
+		Sfx.play_sound(3, -15.0)
+	elif Input.is_action_just_pressed("move_left"):
 		anim_sprite.play("move_left")
-	elif Input.is_action_pressed("move_right"):
+		Sfx.play_sound(3, -15.0)
+	elif Input.is_action_just_pressed("move_right"):
 		anim_sprite.play("move_right")
-	elif Input.is_action_pressed("move_up"):
+		Sfx.play_sound(3, -15.0)
+	elif Input.is_action_just_pressed("move_up"):
 		anim_sprite.play("move_up")
+		Sfx.play_sound(3, -15.0)
 		
 	if Input.is_action_pressed("interact"):
 		match last_direction:
@@ -66,10 +71,16 @@ func _input(event):
 	if event.is_action_pressed('inventory') and !Global.grab_controls:
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
+		Sfx.play_sound(2, -15.0)
 	if Input.is_action_just_pressed('ui_cancel'):
-		lock_ui.visible = false
-		box_ui.visible = false
-		get_tree().paused = false
+		if lock_ui.visible:
+			lock_ui.visible = false
+			get_tree().paused = false
+			Sfx.play_sound(2, -15.0)
+		if box_ui.visible:
+			box_ui.visible = false
+			get_tree().paused = false
+			Sfx.play_sound(2, -15.0)
 
 
 func _on_lock_ui_code_correct():

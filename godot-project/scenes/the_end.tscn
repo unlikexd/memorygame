@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqunh7umshc1l"]
+
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="1_unlq8"]
+
+[node name="TheEnd" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 465.0
+offset_right = 1305.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("1_unlq8")
+theme_override_font_sizes/font_size = 150
+text = "Конец"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

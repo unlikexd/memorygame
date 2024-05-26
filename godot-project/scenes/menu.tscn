@@ -7,15 +7,18 @@
 [ext_resource type="AudioStream" uid="uid://eyxx48h8mit1" path="res://OMORI OST - 001 Title.mp3" id="5_w6q5e"]
 
 [node name="Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ts2qx")
 
 [node name="background" type="Sprite2D" parent="."]
+process_mode = 3
 position = Vector2(960, 540)
 texture = ExtResource("2_rn6qk")
 
@@ -25,6 +28,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_dcutj")
 
 [node name="Menu" type="VBoxContainer" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -55,6 +59,7 @@ text = "Exit"
 stream = ExtResource("5_w6q5e")
 volume_db = -19.259
 autoplay = true
+bus = &"music"
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -72,6 +77,7 @@ theme_override_font_sizes/font_size = 150
 text = "MEMORY"
 
 [node name="Options" type="Control" parent="."]
+process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -81,6 +87,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Options"]
 layout_mode = 1
@@ -98,6 +105,7 @@ grow_vertical = 0
 scale = Vector2(3, 3)
 
 [node name="Video" type="Button" parent="Options/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_edfni")
 text = "Video"
@@ -125,6 +133,7 @@ theme_override_fonts/font = ExtResource("4_edfni")
 text = "Back"
 
 [node name="Video" type="Control" parent="."]
+process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -132,6 +141,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Video"]
 layout_mode = 1
@@ -190,6 +200,7 @@ theme_override_fonts/font = ExtResource("4_edfni")
 text = "Back"
 
 [node name="Audio" type="Control" parent="."]
+process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -197,6 +208,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
 layout_mode = 1
@@ -241,6 +253,9 @@ size_flags_vertical = 7
 layout_mode = 2
 size_flags_vertical = 7
 
+[node name="SFX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
+layout_mode = 2
+
 [node name="BackFromAudio" type="Button" parent="Audio"]
 layout_mode = 1
 anchors_preset = 7
@@ -269,4 +284,5 @@ text = "Back"
 [connection signal="pressed" from="Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/Slider/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/Slider/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Slider/SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]

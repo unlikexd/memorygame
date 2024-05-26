@@ -124,18 +124,18 @@ texture = ExtResource("6_dbm03")
 
 [node name="Me" type="Sprite2D" parent="Closet"]
 visible = false
-position = Vector2(971.23, 288.18)
+position = Vector2(951.23, 288.18)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_lp1lx")
 
 [node name="Us" type="Sprite2D" parent="Closet"]
-position = Vector2(960, 288.182)
+position = Vector2(962.45, 288.182)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("8_gr432")
 
 [node name="Family" type="Sprite2D" parent="Closet"]
 visible = false
-position = Vector2(949.79, 288.19)
+position = Vector2(972.65, 288.19)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("9_mpbr1")
 

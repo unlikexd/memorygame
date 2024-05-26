@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr7q4xiqkoyg"]
+[gd_scene load_steps=9 format=3 uid="uid://cr7q4xiqkoyg"]
 
 [ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_7x5e8"]
+[ext_resource type="Script" path="res://scripts/final.gd" id="1_gwbvs"]
 [ext_resource type="Texture2D" uid="uid://dykw0dw4i4oax" path="res://pictures/final.png" id="2_20i17"]
 [ext_resource type="Texture2D" uid="uid://dcovbekxei4d0" path="res://pictures/Background.png" id="3_7tfan"]
 [ext_resource type="Texture2D" uid="uid://48rpsrbslb6" path="res://pictures/Lena.png" id="4_1tih5"]
+[ext_resource type="PackedScene" uid="uid://tnm1nobg8j45" path="res://scenes/player.tscn" id="6_mmryy"]
+[ext_resource type="FontFile" uid="uid://bby4ub4ge7pct" path="res://Pixel Times Bold.ttf" id="7_fs2op"]
+[ext_resource type="Texture2D" uid="uid://els1umf7yk2d" path="res://pictures/blanket.png" id="8_1udfc"]
 
 [node name="Final" type="Node2D"]
+script = ExtResource("1_gwbvs")
 
 [node name="AtlasScene" type="Node" parent="."]
 script = ExtResource("1_7x5e8")
@@ -16,7 +21,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_20i17")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.639216)
+modulate = Color(0.313726, 1, 1, 0.721569)
 position = Vector2(949, 530.5)
 scale = Vector2(0.803333, 0.904167)
 texture = ExtResource("3_7tfan")
@@ -25,3 +30,53 @@ texture = ExtResource("3_7tfan")
 z_index = 1
 position = Vector2(992, 393)
 texture = ExtResource("4_1tih5")
+
+[node name="TextBubble" type="Label" parent="Lena"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 387.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("7_fs2op")
+theme_override_font_sizes/font_size = 20
+text = "Думаю"
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBubble" type="ColorRect" parent="Lena/TextBubble"]
+visible = false
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 38.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_mmryy")]
+z_index = 1
+position = Vector2(1181, 432)
+
+[node name="TextBubble" type="Label" parent="CharacterBody2D"]
+offset_left = 32.0
+offset_top = -178.0
+offset_right = 387.0
+offset_bottom = -94.0
+theme_override_fonts/font = ExtResource("7_fs2op")
+theme_override_font_sizes/font_size = 20
+text = "Думаю"
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBubble" type="ColorRect" parent="CharacterBody2D/TextBubble"]
+visible = false
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 38.0
+color = Color(0.466667, 0.466667, 0.466667, 0.721569)
+
+[node name="Blanket" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1184, 511)
+scale = Vector2(0.695, 0.695)
+texture = ExtResource("8_1udfc")

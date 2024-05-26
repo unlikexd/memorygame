@@ -85,4 +85,5 @@ theme_override_fonts/font = ExtResource("1_eqpas")
 theme_override_font_sizes/font_size = 30
 text = "ПОДТВЕРДИТЬ"
 
+[connection signal="text_changed" from="ColorRect/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="ColorRect2/Button" to="." method="_on_button_pressed"]
