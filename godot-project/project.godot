@@ -74,10 +74,10 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Memory"
+config/name="Rose of Memory"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="res://pictures/logo.png"
 
 [autoload]
 
@@ -90,6 +90,8 @@ Global="*res://scripts/global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/initial_position_type=0
+window/size/initial_position=Vector2i(200, 200)
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
